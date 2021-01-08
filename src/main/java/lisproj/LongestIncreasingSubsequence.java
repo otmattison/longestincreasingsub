@@ -1,16 +1,28 @@
 package lisproj;
+import java.util.*;
 
 public class LongestIncreasingSubsequence {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int arr[] = { 5, 11, 20, 50, 23, 45, 17, 44, 60 };
-		int length = arr.length;
+		//int arr[] = { 5, 11, 20, 50, 23, 45, 17, 44, 60 };
+		//int length = arr.length;
+		Random rd = new Random();
+		
+		int length = rd.nextInt((10) +1) ;//random int range can be changed here
+		int arr[] = new int[length];
+		
+		for(int i = 0; i < length; i++) {
+			arr[i] = rd.nextInt(100)+1;//(1-100)
+		}
+		System.out.println(length + " is the length of the array");
+		
 		int maxlength, i, j = 0;
 
 		for (int temp : arr) {
 			System.out.print(temp + " ");
 		}
+		System.out.print(" un-ordered array");
 		System.out.println("\n" + "length of the longest increasing sequience is : " + lisLength(arr, length));
 	}
 

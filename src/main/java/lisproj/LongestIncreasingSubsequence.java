@@ -11,7 +11,7 @@ public class LongestIncreasingSubsequence {
 		for (int temp : arr) {
 			System.out.print(temp + " ");
 		}
-		System.out.println("\n"+ "length of the longest increasing sequience is : " + lisLength(arr, length));
+		System.out.println("\n" + "length of the longest increasing sequience is : " + lisLength(arr, length));
 	}
 
 	public static int lisLength(int[] arr, int length) {
@@ -19,13 +19,13 @@ public class LongestIncreasingSubsequence {
 		int lis[] = new int[length];
 		// int temp;
 		int maxlength = 0;
-		//print..
-		
+		// print..
+
 		//
 		for (int i = 0; i < length; i++) {
 			lis[i] = 1;
 		}
-
+		//iterates through find longest increasing subsequence
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < i; j++) {
 				if (arr[j] < arr[i] && lis[i] < lis[j] + 1) {
@@ -34,13 +34,14 @@ public class LongestIncreasingSubsequence {
 				}
 			}
 		}
-
+		//get count for max subsequence
 		for (int i = 0; i < length; i++) {
 			if (lis[i] > maxlength) {
 				maxlength = lis[i];
-			}
-		}
 
+			}
+
+		}
 		return maxlength;
 
 	}
